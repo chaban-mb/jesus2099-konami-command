@@ -40,9 +40,17 @@ if (mergeType) {
 	}, 500);
 } else {
 	/* merge queue (clear before add) tool */
-	var mergeButton = document.querySelector("div#content > form[action*='/merge_queue'] > table.tbl ~ div.row > span.buttons > button[type='submit'], div#page > form[action*='/merge_queue'] > table.tbl ~ div.row > span.buttons > button[type='submit'], div#content > form[action*='/merge_queue'] > div.recording-list ~ div.row > span.buttons > button[type='submit']");
+	var mergeButton = document.querySelector(
+		// Releases in release group
+		"form[action*='/merge_queue'] span.buttons > button[type='submit']"
+		+ "," +
+		// Original selectors
+		"div#content > form[action*='/merge_queue'] > table.tbl ~ div.row > span.buttons > button[type='submit'], " +
+		"div#page > form[action*='/merge_queue'] > table.tbl ~ div.row > span.buttons > button[type='submit'], " +
+		"div#content > form[action*='/merge_queue'] > div.recording-list ~ div.row > span.buttons > button[type='submit']"
+	);
 	if (mergeButton) {
-		var checkForm = mergeButton.parentNode.parentNode.parentNode;
+		var checkForm = mergeButton.closest("form");
 		setButtonTextFromSelectedToAll(mergeButton, true);
 		checkForm.addEventListener("submit", function(event) {
 			if (noChildrenChecked(this)) {
