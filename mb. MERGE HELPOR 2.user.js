@@ -159,7 +159,7 @@ function findUsefulMergeInfo() {
 						for (let i = 1; i < sortedTargets.length; i++) {
 							mergeTargets += (i == 1 ? " ← " : " + ") + thousandSeparator(sortedTargets[i]);
 						}
-						editNote.value = (editNote.value ? editNote.value + "\n\u00a0—\u00a0\n" : "") + "Merging into oldest [MBID] (" + mergeTargets + ").";
+						//editNote.value = (editNote.value ? editNote.value + "\n\u00a0—\u00a0\n" : "") + "Merging into oldest [MBID] (" + mergeTargets + ").";
 					}
 				} else {
 					if (!editNote.parentNode.querySelector("p.error.invalid." + userjs)) {
