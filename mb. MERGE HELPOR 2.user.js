@@ -128,7 +128,7 @@ function findUsefulMergeInfo() {
 				// Script only triggered by Submit (button.positive), not Cancel (button.negative)
 				editNote.style.removeProperty("background-color");
 				editNote.value = editNote.value.replace(/\u00a0—\u00a0[\r\n]{1,2}Merging into oldest \[MBID\] \(['\d,\s←+]+\)\./g, "").trim(); // linked in mb_ELEPHANT-EDITOR.user.js
-				if (editNote && editNote.value && !MB_is_invalid_edit_note(editNote.value)) {
+				if (true) {
 					var edit_note_error = editNote.parentNode.querySelector("p.error.invalid." + userjs);
 					if (edit_note_error) {
 						removeNode(edit_note_error);
